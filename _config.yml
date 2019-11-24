@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: My Home
-subtitle: you sitll have lots more to work on
+title: FuShuai's Blog
+subtitle: You sitll have lots more to work on!
 author: 小 帅
 language:
 timezone:
@@ -13,8 +13,8 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite-url       # Note: don't forget to modify the CNAME file to your url
 root: /
-permalink: :year/:month/:day/:title/
-permalinkimg: :year/:month/:day/:title/assets/
+permalink: :year:month:day/:title/
+permalinkimg: :year:month:day/:title/assets/
 permalink_defaults:
 
 #Custom Setting Start
