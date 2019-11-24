@@ -1,5 +1,5 @@
 ---
-title: "test"
+title: "Text"
 catalog: true
 date: 2017-03-18 10:51:24
 subtitle: "This is hexo theme Demo."
