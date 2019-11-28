@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .banner{
+            width: 520px;
+            height: 304px;
+            border: 1px solid;
+            margin: 1em auto;
+            position: relative;
+        }
+        .banner img{
+            width: 520px;
+            height: 304px;
+        }
+        .banner .bottomModal{
+            position: absolute;
+            left: 0px;
+            bottom: 0px;    
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 40px;
+            color: #fff;
+            padding: 0 20px;
+            box-sizing: border-box;
+            line-height: 40px;
+        }
+        .banner .bottomModal .title{
+            float: left;
+        }
+        .banner .bottomModal .dots{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="https://imgsa.baidu.com/news/q%3D100/sign=5705d1024ca98226bec12f27ba83b97a/908fa0ec08fa513d9a563fa9326d55fbb3fbd9cd.jpg" alt="" srcset="">
+        <div class="bottomModal">
+            <div class="title">
+                <h3>今天天气挺好的</h2>
+            </div>
+            <div class="dots">
+                点 点 点
+            </div>
+        </div>
+    </div>
+</body>
+</html>

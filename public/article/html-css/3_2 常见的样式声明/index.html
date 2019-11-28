@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          3-2 常见的样式声明 - 付帅 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/article/html-css/3_2 常见的样式声明/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('Demo.png')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#css" title="css">css</a>
+                            
+                              <a class="tag" href="/tags/#html和css零基础入门" title="html和css零基础入门">html和css零基础入门</a>
+                            
+                        </div>
+                        <h1>3-2 常见的样式声明</h1>
+                        <h2 class="subheading">HTML和CSS零基础权威入门</h2>
+                        <span class="meta">
+                            Posted by Xiao Shuai on
+                            2019-08-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FuShuai&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="color">color</h1>
+<p>内部文字的颜色</p>
+<ol>
+<li>值的第一种写法： 预设值 – 定义好的单词，css已经写好了一些常用的单词，代表颜色</li>
+</ol>
+<p><img src="assets/2019-08-22-08-47-51.png" alt=""></p>
+<ol start="2">
+<li>值的第二种写法： 三原色, 色值 – 每个颜色可以使用0-255的数字来表达</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rgb表示法</span><br><span class="line">rgb(0, 255, 0);</span><br><span class="line"></span><br><span class="line">hex(16进制)表示法</span><br><span class="line">#红绿蓝 -&gt; #008c8c</span><br></pre></td></tr></table></figure>
+<p>光学三原色知识：<a href="https://baike.baidu.com/item/%E4%B8%89%E5%8E%9F%E8%89%B2/764849?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/三原色/764849?fr=aladdin</a></p>
+<h1 id="background-color">background-color</h1>
+<p>元素背景颜色</p>
+<h1 id="font-size">font-size</h1>
+<p>元素内部文字的尺寸大小</p>
+<h2 id="px-像素绝对单位">px: 像素（绝对单位）</h2>
+<p>咱们看到的图片也好，电脑屏幕也好，是由很多的点组成的，比如下图，是一张电脑分辨率，表示的意思的 显示器 横向上有1920个点，纵向上有1080个点，每一个点都是一个 像素点<br>
+<img src="assets/2019-08-21-16-53-13.png" alt=""></p>
+<h2 id="em-相对单位">em: 相对单位</h2>
+<p>相对于父元素的字体大小, 最终都会换算成像素值</p>
+<p>2em: 指的是父元素字体大小的两倍</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"font-size: 2em"</span>&gt;</span> // 2em = 20px</span><br><span class="line">        像素</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>如果父元素没有字体大小，就往上找，去找它继承的字体大小，如果一直找到html根元素，html也没有声明字体大小的化，则使用基准字号</strong></p>
+<p><strong>每个元素都必须有字体大小，如果没有声明，则直接使用父元素的字体大小，如果没有父元素，则使用基础字号</strong></p>
+<p><strong>基准字号：浏览器设置的字体大小，可以看下浏览器的设置</strong></p>
+<p><img src="assets/2019-08-21-17-09-11.png" alt=""></p>
+<p>##扩展知识：user agent 用户代理（这里指的就是浏览器）</p>
+<p>如下图所示，用户代理（也就是浏览器）会默认的设置一些样式<br>
+<img src="assets/2019-08-21-17-19-58.png" alt=""></p>
+<p>更多知识：<a href="https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86/1471005?fromtitle=User%20Agent&amp;fromid=11183847&amp;fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/用户代理/1471005?fromtitle=User Agent&amp;fromid=11183847&amp;fr=aladdin</a></p>
+<h1 id="font-weight">font-weight</h1>
+<p>文字粗细程度，可以取值为数字，可以取值为预设值</p>
+<table>
+<thead>
+<tr>
+<th>预设值</th>
+<th>数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>400</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>700</td>
+</tr>
+</tbody>
+</table>
+<h2 id="扩展元素strong-元素">扩展元素：strong 元素</h2>
+<p>也是默认加粗的效果</p>
+<p>strong: 表示重要的，不能忽略的内容</p>
+<h1 id="font-family">font-family</h1>
+<p>文字类型</p>
+<p>宋体，微软雅黑，楷体 …</p>
+<p><strong>这里的取值有个前提条件，必须计算机用户存在的字体才有效</strong></p>
+<p><strong>如果计算机不存在这个字体，那么浏览器就会忽略这个属性设置，所以针对于上述情况，可以设置多个字体</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: 楷体，宋体，微软雅黑.....</span><br></pre></td></tr></table></figure>
+<p>##扩展知识：sans-serif</p>
+<p>字体的边缘没有经过修饰，使用这种字体往往是因为用户的计算机是很老式的计算机，不支持现在的很多字体，让计算机默认的选择一个非衬线字体。</p>
+<p>因为每个计算机，都会默认有两个字体，一个非衬线字体，一个衬线字体。</p>
+<p><strong>所以一般在设置字体类型时，为了兼容一些老式的电脑，都会在最后默认加上 sans-serif 非衬线字体</strong></p>
+<p>更多字体：<a href="https://baike.baidu.com/item/%E8%A1%AC%E7%BA%BF%E5%AD%97%E4%BD%93/6820704?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/衬线字体/6820704?fr=aladdin</a></p>
+<h1 id="font-style">font-style</h1>
+<p>字体样式，通常用它设置斜体</p>
+<h2 id="扩展元素-i元素-em元素">扩展元素: i元素 em元素</h2>
+<p>都是表示倾斜字体</p>
+<p><font color="red">i元素：实际使用中，通常用它表示一个图标，不用来表示倾斜字体</font></p>
+<h1 id="text-decoration">text-decoration</h1>
+<p>文本修饰的意思，给文本加线</p>
+<ul>
+<li>line-through: 中间穿过一条线 <strong>比如：del元素</strong></li>
+<li>underline: 底下加条线  <strong>比如：a元素下面的线</strong></li>
+</ul>
+<h2 id="扩展元素-del元素s元素">扩展元素 del元素，s元素</h2>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>del元素</td>
+<td>错误的内容</td>
+</tr>
+<tr>
+<td>s元素</td>
+<td>过期的内容</td>
+</tr>
+</tbody>
+</table>
+<h1 id="text-indent">text-indent</h1>
+<p>首行文本缩进</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>px</td>
+<td>缩进多少个像素</td>
+</tr>
+<tr>
+<td>em</td>
+<td>缩进多少个文字(中文是两个字符,英文是中文的两个字符的长度)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="lint-height">lint-height</h1>
+<p>行高: 每行文本的高度,该值越大，每行文本的距离越大</p>
+<h2 id="用法1">用法1</h2>
+<p>设置行高为容器的高度，可以让单行文本垂直居中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"background-color: #008c8c; color: white; height: 50px; line-height: 50px;"</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="用法2">用法2</h2>
+<p>可以设置为纯数字，针对于多行文字，就不能设置成绝对的单位，就要用相对的单位，就用到纯数字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height: 1.5</span><br></pre></td></tr></table></figure>
+<p><img src="assets/2019-08-21-23-10-13.png" alt=""></p>
+<h1 id="width-和-height">width 和 height</h1>
+<p>宽度 和 高度</p>
+<h1 id="letter-space">letter-space</h1>
+<p>文字间隙</p>
+<p>值分两种：像素值，em</p>
+<h1 id="text-align">text-align</h1>
+<p>元素内部，元素的水平排序方式</p>
+<ul>
+<li>left 居左</li>
+<li>center 居中</li>
+<li>right 居右</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/html-css/3_4 层叠/" data-toggle="tooltip" data-placement="top" title="3-4 层叠(深度刨析CSS的权重)">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/html-css/3_1 为网页添加样式/" data-toggle="tooltip" data-placement="top" title="3-1 CSS为网页添加样式">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#color"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">color</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#background-color"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">background-color</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#font-size"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">font-size</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#px-像素绝对单位"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">px: &#x50CF;&#x7D20;&#xFF08;&#x7EDD;&#x5BF9;&#x5355;&#x4F4D;&#xFF09;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#em-相对单位"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">em: &#x76F8;&#x5BF9;&#x5355;&#x4F4D;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#font-weight"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">font-weight</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#扩展元素strong-元素"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">&#x6269;&#x5C55;&#x5143;&#x7D20;&#xFF1A;strong &#x5143;&#x7D20;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#font-family"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">font-family</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#font-style"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">font-style</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#扩展元素-i元素-em元素"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">&#x6269;&#x5C55;&#x5143;&#x7D20;: i&#x5143;&#x7D20; em&#x5143;&#x7D20;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#text-decoration"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">text-decoration</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#扩展元素-del元素s元素"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">&#x6269;&#x5C55;&#x5143;&#x7D20; del&#x5143;&#x7D20;&#xFF0C;s&#x5143;&#x7D20;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#text-indent"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">text-indent</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#lint-height"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">lint-height</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用法1"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">&#x7528;&#x6CD5;1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用法2"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">&#x7528;&#x6CD5;2</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#width-和-height"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">width &#x548C; height</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#letter-space"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">letter-space</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#text-align"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">text-align</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#css" title="css">css</a>
+                        
+                          <a class="tag" href="/tags/#html和css零基础入门" title="html和css零基础入门">html和css零基础入门</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/qcxiaoshuai-snake">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Xiao Shuai 2019 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite-url/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

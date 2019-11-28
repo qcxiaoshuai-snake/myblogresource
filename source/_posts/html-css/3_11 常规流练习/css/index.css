@@ -1,0 +1,58 @@
+body {
+    /* 一般整个网页的背景通常设置在body上 */
+    background-color: #4d4a40;
+    padding: 20px 0;
+    /* 针对针对字体的大部分元素，都可以继承，所以针对于整个内容的行高设置，就可以在body设置行高 */
+    line-height: 2;
+    /* 设置网页的最小宽度，防止页面太小了，样式不舒服，所以设置最小宽度 */
+    min-width: 1000px;
+}
+
+.container {
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.container header {
+    background: #267890;
+    color: #fff;
+    /* 文字居中，因为文字的属性 都可以被继承 所以可以在这里设置 */
+    text-align: center;
+    border: 5px solid #14414e;
+    margin: 0 -34px;
+}
+
+.container header h1 {
+    font-size: 42px;
+    font-weight: blod;
+}
+
+.container header .original-link {
+    color: #dbdbdd;
+    margin-bottom: 25px;
+}
+
+.container header .original-link a {
+    text-decoration: underline;
+}
+
+.container header .original-link a:link {
+    color: #fff;
+}
+
+.container seciton {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container section p {
+    margin: 1em 0;
+}
+
+.container section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    border-top: 1px dashed;
+}

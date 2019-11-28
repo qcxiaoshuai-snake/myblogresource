@@ -22,17 +22,7 @@ fixed: false
 
 > 容器云（Docker、Kubernetes等）相关生态技术研究。
 
-### 参与社区
-
- > CSDN博客:http://blog.csdn.net/huwh_
- >
- > Github:https://github.com/huweihuang
- >
- > 阿里云栖社区:https://yq.aliyun.com/u/huweihuang
- >
- > DockOne社区:http://dockone.io/people/胡伟煌
-
 ### 联系我
 
->Email: huweihuang@foxmail.com
+>Email: qcxiaoshuia@aliyun.com
 

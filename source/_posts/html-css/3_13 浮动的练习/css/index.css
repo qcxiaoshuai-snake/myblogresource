@@ -1,0 +1,102 @@
+.main .nav {
+    height: 60px;
+    background: #47464a;
+    color: #999;
+    text-align: center;
+}
+
+.main .nav a{
+    line-height: 60px;
+    margin: 0 38px;
+}
+
+.main .nav a:hover{
+    color: #fff;
+}
+
+.main .nav a.select {
+    color: #ef4238;
+}
+
+.main .container {
+    width: 1122px;
+    margin: 0 auto;
+}
+
+.main .container .type {
+    border: 1px solid #e5e5e5;
+    margin: 40px 0;
+    font-size: 14px;
+    line-height: 2em;
+    padding: 0 30px;
+}
+
+.main .container .type .type-item {
+    margin: 1em 0;
+    border-bottom: 1px dotted #e5e5e5;
+}
+
+.main .container .type .type-item.noline{
+    border: none;
+}
+
+.main .container .type .type-item .left {
+    float: left;
+    /* width: 60px; */
+    text-align: right;
+    color: #999;
+}
+
+.main .container .type .type-item .right {
+    float: left;
+    width: 1000px;
+}
+
+.main .container .type .type-item .right ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.main .container .type .type-item .right ul li a:hover{
+    color: #ef4238;
+}
+
+.main .container .type .type-item .right ul li a.select{
+    background: #ef4238;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+
+.main .container .movie .movie-item {
+    width: 160px;
+    float: left;
+    margin-right: 32px;
+    line-height: 2em;
+}
+
+.main .container .movie .movie-item img{
+    width: 160px;
+    height: 220px;
+}
+
+.main .container .movie .movie-item:nth-child(6n) {
+    margin-right: 0;
+}
+
+.main .container .movie .movie-item .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.main .container .movie .movie-item .score {
+    color: #ffb400;
+    font-style: italic;
+    text-align: center;
+}
+
+.main .container .movie .movie-item .score::first-letter{
+    font-size: 18px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*从重要性角度比较，以下样式都是作者样式表，所以需要比较特殊性
+            要从特殊性的几个角度, 特殊性的角度比较晚了之后，发现如下的两个
+            特殊性一样的样式，要从源次序上进行比较，靠后的胜出
+        */
+
+        #mydiv #myul :link{
+            /*有两个ID选择器，一个伪类选择器:link
+                所以color对应的四位数是：0 2 1 0*/
+            color: #008c8c;
+        }
+
+        #mydiv #myul .mylink{
+            /*有两个ID选择器，一个类选择器
+                所以color对应的四位数是：0 2 1 0*/
+            color: pink;
+        }
+
+        /*结论：综上对比，可以看到color声明冲突的最后胜出者是 color：#008c8c；*/
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <ul id="myul">
+            <li id="myli">
+                <a href="https://163.com" class="mylink">
+                    层叠样式例子
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
