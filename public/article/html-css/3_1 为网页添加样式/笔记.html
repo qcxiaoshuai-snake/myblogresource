@@ -1,0 +1,99 @@
+<hr>
+<p>title: &quot;3-1 CSS为网页添加样式&quot;<br>
+catalog: true<br>
+date: 2019-08-20<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>css</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>css</li>
+</ul>
+<hr>
+<h2>术语解释</h2>
+<pre><code class="language-css">h1 {
+   color: red;
+   background-color: lightblue;
+   text-align: center
+}
+</code></pre>
+<p>CSS规则 = 选择器 + 声明块</p>
+<h3>选择器</h3>
+<p>选择器： 选中元素的</p>
+<h4>元素选择器</h4>
+<p>可以选择 页面上 所有的同名元素，选择范围较广</p>
+<pre><code class="language-css">h1 {
+    color: red;
+    background-color: lightblue;
+    text-align: center
+}
+p {
+    color: blue;
+}
+</code></pre>
+<h4>id选择器</h4>
+<p>选中的是对于id值的元素，选择范围太窄</p>
+<pre><code class="language-css">#test {
+    color: red;
+}
+&lt;p id=&quot;test&quot;&gt;Voluptate perferendis doloribus eaque dolorum!&lt;/p&gt;
+</code></pre>
+<h4>类选择器</h4>
+<p>类选择器 选择具有相同内容属性的元素</p>
+<pre><code class="language-css">.testClass {
+    color: yellow;
+}
+.testFont {
+    font-size: 3em;
+}
+类选择器可以写多个
+&lt;p class=&quot;testClass testFont&quot;&gt;Perspiciatis aut qui beatae aliquid?&lt;/p&gt;
+</code></pre>
+<h3>声明块</h3>
+<p>出现在 ’{}‘ 中，包含很多声明（属性），每一个属性表达了某一方面的样式</p>
+<h2>css代码书写位置</h2>
+<h3>内部样式表</h3>
+<p>书写在style元素中, 一般放在 &lt;head&gt; 里, 代表一开始就加载，也可放在其它地方</p>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            color: red;
+            background-color: lightblue;
+            text-align: center
+        }
+        p {
+            color: blue;
+        }
+        #test {
+            color: red;
+        }
+        .testClass {
+            color: yellow;
+        }
+        .testFont {
+            font-size: 3em;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<blockquote>
+<p>使用场景：单页面样式不多的情况，可以考虑使用内部样式表（但是这种情况比较少见）</p>
+</blockquote>
+<h3>内联样式表，元素样式表</h3>
+<p>直接书写在元素的style属性中</p>
+<pre><code class="language-html">&lt;p style=&quot;color: lightsalmon&quot;&gt;Accusantium, eaque. Sint, ad doloribus.&lt;/p&gt;
+</code></pre>
+<h3>外部样式表 [推荐]</h3>
+<p>将样式书写在独立的css文件中</p>
+<p>优点</p>
+<ol>
+<li>外部样式可以解决多页面样式重复的问题</li>
+<li>有利于浏览器缓存，浏览器在第一次读外部样式表的时候，会把该css文件缓存到浏览器中，如果在后续读到这个文件链接，那么会从缓存中直接读取，这样可以大大提高页面的响应速度</li>
+<li>有利于代码分离，（HTML和CSS代码分离），代码逻辑清晰，更容易阅读和维护</li>
+</ol>

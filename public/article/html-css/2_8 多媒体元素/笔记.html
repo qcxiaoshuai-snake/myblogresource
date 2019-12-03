@@ -1,0 +1,56 @@
+<hr>
+<p>title: &quot;2-8 多媒体元素&quot;<br>
+catalog: true<br>
+date: 2019-08-18<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>html</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>html</li>
+</ul>
+<hr>
+<h2>video 元素</h2>
+<pre><code class="language-html">&lt;video controls=&quot;controls&quot; src=&quot;&quot;&gt;&lt;/video&gt;
+</code></pre>
+<h3>src 属性</h3>
+<p>对于站外资源的链接，都是有保护的，拿不到视频地址的</p>
+<h3>controls 属性 (布尔属性)</h3>
+<p>控制视频的控件是否展示</p>
+<h3>autoplay 属性 （布尔属性）</h3>
+<p>自动播放</p>
+<h3>muted 属性  (布尔属性)</h3>
+<p>有些浏览器，或者说有些浏览器的有些设置状态，是不允许视频有打开自动播放的设置的，因为它怕用户一打开，视频自动播放，会吓到用户，所以即使你加了autoplay,浏览器也不会甩你  这个时候用该属性</p>
+<h3>loop 属性  (布尔属性)</h3>
+<p>循环播放</p>
+<h2>audio</h2>
+<p>和视频 vedio 一样</p>
+<h2>兼容性</h2>
+<ol>
+<li>旧版本的浏览器不支持这两个元素</li>
+<li>不同的浏览器支持的音频/视频格式可能不一致</li>
+</ol>
+<p>兼容性的处理，就不放在video和audio的元素上了<br>
+而是加上了子元素 source</p>
+<pre><code class="language-html">&lt;video&gt;
+    &lt;source src=&quot;&quot;&gt;
+    &lt;source src=&quot;&quot;&gt;
+    &lt;p&gt;
+        处理方式一：说明：对不起，你的浏览器不支持video元素,请下载最新版本的浏览器
+        处理方式二：嵌入旧版本支持的flash
+    &lt;/p&gt;
+&lt;/video&gt;
+</code></pre>
+<h2>扩展知识 布尔属性</h2>
+<p>video中的：controls 属性 引发的扩展知识 <strong>布尔属性</strong></p>
+<p>某些属性只有两种状态</p>
+<ul>
+<li>不写</li>
+<li>属性值和属性名一样</li>
+</ul>
+<p>这种属性叫 <strong>布尔属性</strong></p>
+<p><strong>html5规定：布尔属性可以不用书写属性值</strong></p>
+<pre><code class="language-html">&lt;video controls src=&quot;&quot;&gt;&lt;/video&gt;
+</code></pre>

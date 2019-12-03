@@ -1,0 +1,165 @@
+<hr>
+<p>title: &quot;3-2 常见的样式声明&quot;<br>
+catalog: true<br>
+date: 2019-08-21<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>css</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>css</li>
+</ul>
+<hr>
+<h1>color</h1>
+<p>内部文字的颜色</p>
+<ol>
+<li>值的第一种写法： 预设值 – 定义好的单词，css已经写好了一些常用的单词，代表颜色</li>
+</ol>
+<p><img src="assets/2019-08-22-08-47-51.png" alt=""></p>
+<ol start="2">
+<li>值的第二种写法： 三原色, 色值 – 每个颜色可以使用0-255的数字来表达</li>
+</ol>
+<pre><code>rgb表示法
+rgb(0, 255, 0);
+
+hex(16进制)表示法
+#红绿蓝 -&gt; #008c8c
+
+</code></pre>
+<p>光学三原色知识：<a href="https://baike.baidu.com/item/%E4%B8%89%E5%8E%9F%E8%89%B2/764849?fr=aladdin">https://baike.baidu.com/item/三原色/764849?fr=aladdin</a></p>
+<h1>background-color</h1>
+<p>元素背景颜色</p>
+<h1>font-size</h1>
+<p>元素内部文字的尺寸大小</p>
+<h2>px: 像素（绝对单位）</h2>
+<p>咱们看到的图片也好，电脑屏幕也好，是由很多的点组成的，比如下图，是一张电脑分辨率，表示的意思的 显示器 横向上有1920个点，纵向上有1080个点，每一个点都是一个 像素点<br>
+<img src="assets/2019-08-21-16-53-13.png" alt=""></p>
+<h2>em: 相对单位</h2>
+<p>相对于父元素的字体大小, 最终都会换算成像素值</p>
+<p>2em: 指的是父元素字体大小的两倍</p>
+<pre><code class="language-html">&lt;div style=&quot;font-size: 10px&quot;&gt;
+    &lt;div style=&quot;font-size: 2em&quot;&gt; // 2em = 20px
+        像素
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>如果父元素没有字体大小，就往上找，去找它继承的字体大小，如果一直找到html根元素，html也没有声明字体大小的化，则使用基准字号</strong></p>
+<p><strong>每个元素都必须有字体大小，如果没有声明，则直接使用父元素的字体大小，如果没有父元素，则使用基础字号</strong></p>
+<p><strong>基准字号：浏览器设置的字体大小，可以看下浏览器的设置</strong></p>
+<p><img src="assets/2019-08-21-17-09-11.png" alt=""></p>
+<p>##扩展知识：user agent 用户代理（这里指的就是浏览器）</p>
+<p>如下图所示，用户代理（也就是浏览器）会默认的设置一些样式<br>
+<img src="assets/2019-08-21-17-19-58.png" alt=""></p>
+<p>更多知识：<a href="https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86/1471005?fromtitle=User%20Agent&amp;fromid=11183847&amp;fr=aladdin">https://baike.baidu.com/item/用户代理/1471005?fromtitle=User Agent&amp;fromid=11183847&amp;fr=aladdin</a></p>
+<h1>font-weight</h1>
+<p>文字粗细程度，可以取值为数字，可以取值为预设值</p>
+<table>
+<thead>
+<tr>
+<th>预设值</th>
+<th>数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>400</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>700</td>
+</tr>
+</tbody>
+</table>
+<h2>扩展元素：strong 元素</h2>
+<p>也是默认加粗的效果</p>
+<p>strong: 表示重要的，不能忽略的内容</p>
+<h1>font-family</h1>
+<p>文字类型</p>
+<p>宋体，微软雅黑，楷体 …</p>
+<p><strong>这里的取值有个前提条件，必须计算机用户存在的字体才有效</strong></p>
+<p><strong>如果计算机不存在这个字体，那么浏览器就会忽略这个属性设置，所以针对于上述情况，可以设置多个字体</strong></p>
+<pre><code>font-family: 楷体，宋体，微软雅黑.....
+</code></pre>
+<p>##扩展知识：sans-serif</p>
+<p>字体的边缘没有经过修饰，使用这种字体往往是因为用户的计算机是很老式的计算机，不支持现在的很多字体，让计算机默认的选择一个非衬线字体。</p>
+<p>因为每个计算机，都会默认有两个字体，一个非衬线字体，一个衬线字体。</p>
+<p><strong>所以一般在设置字体类型时，为了兼容一些老式的电脑，都会在最后默认加上 sans-serif 非衬线字体</strong></p>
+<p>更多字体：<a href="https://baike.baidu.com/item/%E8%A1%AC%E7%BA%BF%E5%AD%97%E4%BD%93/6820704?fr=aladdin">https://baike.baidu.com/item/衬线字体/6820704?fr=aladdin</a></p>
+<h1>font-style</h1>
+<p>字体样式，通常用它设置斜体</p>
+<h2>扩展元素: i元素 em元素</h2>
+<p>都是表示倾斜字体</p>
+<p><font color=red>i元素：实际使用中，通常用它表示一个图标，不用来表示倾斜字体</font></p>
+<h1>text-decoration</h1>
+<p>文本修饰的意思，给文本加线</p>
+<ul>
+<li>line-through: 中间穿过一条线 <strong>比如：del元素</strong></li>
+<li>underline: 底下加条线  <strong>比如：a元素下面的线</strong></li>
+</ul>
+<h2>扩展元素 del元素，s元素</h2>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>del元素</td>
+<td>错误的内容</td>
+</tr>
+<tr>
+<td>s元素</td>
+<td>过期的内容</td>
+</tr>
+</tbody>
+</table>
+<h1>text-indent</h1>
+<p>首行文本缩进</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>px</td>
+<td>缩进多少个像素</td>
+</tr>
+<tr>
+<td>em</td>
+<td>缩进多少个文字(中文是两个字符,英文是中文的两个字符的长度)</td>
+</tr>
+</tbody>
+</table>
+<h1>lint-height</h1>
+<p>行高: 每行文本的高度,该值越大，每行文本的距离越大</p>
+<h2>用法1</h2>
+<p>设置行高为容器的高度，可以让单行文本垂直居中</p>
+<pre><code class="language-html">&lt;p style=&quot;background-color: #008c8c; color: white; height: 50px; line-height: 50px;&quot;&gt;
+    Lorem ipsum dolor sit amet.
+&lt;/p&gt;
+</code></pre>
+<h2>用法2</h2>
+<p>可以设置为纯数字，针对于多行文字，就不能设置成绝对的单位，就要用相对的单位，就用到纯数字</p>
+<pre><code class="language-html">line-height: 1.5
+</code></pre>
+<p><img src="assets/2019-08-21-23-10-13.png" alt=""></p>
+<h1>width 和 height</h1>
+<p>宽度 和 高度</p>
+<h1>letter-space</h1>
+<p>文字间隙</p>
+<p>值分两种：像素值，em</p>
+<h1>text-align</h1>
+<p>元素内部，元素的水平排序方式</p>
+<ul>
+<li>left 居左</li>
+<li>center 居中</li>
+<li>right 居右</li>
+</ul>

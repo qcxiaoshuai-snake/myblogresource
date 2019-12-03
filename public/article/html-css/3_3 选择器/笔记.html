@@ -1,0 +1,124 @@
+<hr>
+<p>title: &quot;3-3 选择器&quot;<br>
+catalog: true<br>
+date: 2019-08-22<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>css</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>css</li>
+</ul>
+<hr>
+<h2>选择器</h2>
+<p>选择器的作用：可以帮助你精准的选择想要的元素</p>
+<h2>简单选择器</h2>
+<h3>ID选择器</h3>
+<pre><code class="language-css">#id {
+    color: red;
+}
+</code></pre>
+<h3>元素选择器</h3>
+<pre><code class="language-css">p {
+    color: red;
+}
+</code></pre>
+<h3>类选择器</h3>
+<pre><code class="language-css">.class {
+    color: red;
+}
+</code></pre>
+<h3>通配符选择器</h3>
+<pre><code class="language-css">* {
+    color: red;
+}
+</code></pre>
+<h3>属性选择器</h3>
+<pre><code>[属性名]: 选中所有具有该属性名的元素
+[属性名=属性值]: 选中属性名=属性值的 该元素
+</code></pre>
+<p><img src="assets/2019-08-22-09-37-11.png" alt=""><br>
+<img src="assets/2019-08-22-09-42-42.png" alt=""></p>
+<p>更多知识链接：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors</a></p>
+<h3>伪类选择器 ( 目前先学习如下)</h3>
+<p>选中某些元素的某种状态</p>
+<h4>hover</h4>
+<p>鼠标悬停的状态</p>
+<p>一般用于a元素上</p>
+<pre><code class="language-css">a:hover{
+    color: blue;
+}
+&lt;a href=&quot;&quot;&gt;baidu&lt;/a&gt;
+</code></pre>
+<h4>acitve</h4>
+<p>激活时的状态</p>
+<pre><code class="language-css">a:active{
+    color: blue;
+}
+&lt;a href=&quot;&quot;&gt;baidu&lt;/a&gt;
+</code></pre>
+<h4>link</h4>
+<p>超链接未被访问的状态</p>
+<h4>visited</h4>
+<p>超链接访问过后的状态</p>
+<h3>伪元素选择器 ( 目前先学习如下)</h3>
+<h4>before &amp; after</h4>
+<pre><code class="language-css">span::before{
+    content: '《';
+    color: red;
+}
+span::after{
+    content: &quot;》&quot;;
+    color: blue;
+}
+</code></pre>
+<pre><code class="language-html">&lt;p&gt;
+    JS必读的书&lt;span&gt;JS权威指南&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+<p><img src="assets/2019-08-22-10-13-51.png" alt=""></p>
+<h2>选择器的组合</h2>
+<ul>
+<li>并且的多个选择器组合： 直接写到一起</li>
+</ul>
+<pre><code class="language-css">    span::before{
+
+    }
+</code></pre>
+<ul>
+<li>后代元素选则组合： ‘<em>’ + 空格 + '</em>’</li>
+</ul>
+<pre><code class="language-css">    ul li {
+        color: 'red'
+    }
+    .classOne .classTwo {
+
+    }
+    在用了classOne类样式所在的元素的子元素中，用了classTwo类样式的元素
+</code></pre>
+<ul>
+<li>子元素的选择组合： '<em>’ + ‘&gt;’ + ‘</em>’</li>
+</ul>
+<p>只能选择子元素，不能选择子元素的子元素</p>
+<pre><code class="language-css">    ul&gt;li{
+        color: red;
+    }
+</code></pre>
+<ul>
+<li>相邻兄弟元素 ‘_’ + ‘+’ + ‘元素’</li>
+</ul>
+<p>相邻的下一个兄弟元素</p>
+<ul>
+<li>后面所有的兄弟元素 ‘_’ + ‘~’ + ‘元素’</li>
+</ul>
+<p>该选择元素后面的所有的兄弟元素</p>
+<p><strong>只能选择后面的兄弟元素，选择不了前面的兄弟元素，因为css渲染机制的问题</strong></p>
+<h2>选择器的并列</h2>
+<p>多个选择器，用逗号分割</p>
+<pre><code class="language-css">p, h1, .classs {
+    color: red;
+}
+</code></pre>
+<p>应用场景，多个元素，有同一样式，为了更好的便于维护，可以选择选择器的并列写法</p>

@@ -1,0 +1,244 @@
+<hr>
+<p>title: &quot;3-9 行盒的盒模型&quot;<br>
+catalog: true<br>
+date: 2019-08-26<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>css</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>css</li>
+</ul>
+<hr>
+<h2>概念</h2>
+<p>常见的行盒：包含具体的内容的元素</p>
+<p>span, strong, em, i, img …</p>
+<h2>特点</h2>
+<h3>1. 行盒是跟着内容延伸的</h3>
+<p><img src="assets/2019-08-25-11-24-13.png" alt=""></p>
+<h3>2. 行盒是不能设置宽度，高度的，设置不生效的</h3>
+<p>因为行盒是根据内容延伸的，所以就是内容有多长多高，它就有多长多高</p>
+<p><img src="assets/2019-08-25-11-27-45.png" alt=""></p>
+<p><strong>如何调整行盒的宽度，高度呢？</strong></p>
+<p>通过设置字体的大小，行高，字体类型，简介调整</p>
+<p><img src="assets/2019-08-25-11-30-04.png" alt=""></p>
+<h3>填充区（padding）</h3>
+<ul>
+<li>水平方向上有效</li>
+<li>垂直方向只会影响背景，不会实际占用空间(因为浏览器认为，文字的高度取决于行高)</li>
+</ul>
+<h3>边框 （border)</h3>
+<ul>
+<li>水平方向上有效</li>
+<li>垂直方向只会影响背景，不会实际占用空间</li>
+</ul>
+<h3>外边距 （margin)</h3>
+<ul>
+<li>水平方向上有效</li>
+<li>垂直方向上无效</li>
+</ul>
+<h2>行块盒</h2>
+<p>display: inline-block 的盒子</p>
+<p>既有行盒的特点，也有块盒的特点</p>
+<ul>
+<li>不独占一行</li>
+<li>盒模型中，所有尺寸都有效（padding，maring, padding， width, height）</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        a{
+            background: red;
+            color: #fff;
+            display: inline-block;
+            width: 100px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;span&gt;Lorem.&lt;/span&gt;
+    &lt;a href=&quot;http://www.baidu.com&quot;&gt;
+        百度
+    &lt;/a&gt;
+    &lt;span&gt;Lorem.&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-08-25-12-03-32.png" alt=""></p>
+<h3>实际应用</h3>
+<p>一般用于分页的显示</p>
+<p><img src="assets/2019-08-25-12-04-17.png" alt=""></p>
+<p>实操练习，分页</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .pager a{
+            border: 1px solid #e1e2e3;
+            text-decoration: none;
+            color: #38f;
+            /*通过行块盒 设置宽高*/
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+        }
+        .pager a:hover{
+            border-color: #38f;
+            background: #f2f8ff;
+        }
+        .pager .selected{
+            color: #000;
+            border: none;
+            background: initial;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pager&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;1&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;2&lt;/a&gt;
+        &lt;a href=&quot;&quot; class=&quot;selected&quot;&gt;3&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;4&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;5&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;6&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;7&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;8&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;9&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;10&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>效果如下</p>
+<p><img src="assets/2019-08-25-12-12-40.png" alt=""></p>
+<p>虽然实际的效果出来了，但是发现有一个小问题<br>
+就是当我鼠标移动上面时，背景颜色出来了</p>
+<p><img src="assets/2019-08-25-12-13-18.png" alt=""></p>
+<p>怎么解决这个问题呢，这就用到了我们之前所学的知识，层叠的知识</p>
+<p>我们先来看一下 所在的选择器中 背景颜色的权重高低</p>
+<pre><code class="language-html">&lt;a href=&quot;&quot; class=&quot;selected&quot;&gt;3&lt;/a&gt;
+</code></pre>
+<p>层叠性高低如下</p>
+<pre><code class="language-css">/*背景颜色background有声明冲突 因为都是作者样式 所以我们比较特殊性*/
+ .pager a:hover{
+    border-color: #38f;
+    /*特殊性对应的四位数 0 0 2 1 (1个类选择器，1个伪类选择器，一个元素选择器)*/
+    background: #f2f8ff;
+}
+.pager .selected{
+    color: #000;
+    border: none;
+    /*特殊性对于的四位数 0 0 2 0 （2个类选择器）*/
+    background: initial;
+}
+</code></pre>
+<p>上述可得结论 .pager a:hover的背景声明的权重等级是高的，所以鼠标移到上面，会显示该选择器下的背景色</p>
+<p>如何处理呢？<br>
+需要增加 .pager .selected 选择器的权重等级,改成如下：</p>
+<pre><code class="language-css">/*背景颜色background有声明冲突 因为都是作者样式 所以我们比较特殊性*/
+ .pager a:hover{
+    border-color: #38f;
+    /*特殊性对应的四位数 0 0 2 1 (1个类选择器，1个伪类选择器，一个元素选择器)*/
+    background: #f2f8ff;
+}
+/*增加元素选择器a, 权重等级就与上面的一样，再依据源次序的规则，靠后的生效，完美解决*/
+.pager a.selected{
+    color: #000;
+    border: none;
+    /*特殊性对于的四位数 0 0 2 0 （2个类选择器）*/
+    background: initial;
+}
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .pager a{
+            border: 1px solid #e1e2e3;
+            text-decoration: none;
+            color: #38f;
+            /*通过行块盒 设置宽高*/
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+        }
+        .pager a:hover{
+            border-color: #38f;
+            background: #f2f8ff;
+        }
+        /*这里发生变化，选择器等级提升*/
+        .pager a.selected{
+            color: #000;
+            border: none;
+            background: initial;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pager&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;1&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;2&lt;/a&gt;
+        &lt;a href=&quot;&quot; class=&quot;selected&quot;&gt;3&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;4&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;5&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;6&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;7&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;8&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;9&lt;/a&gt;
+        &lt;a href=&quot;&quot;&gt;10&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3>缺点：有空白折叠的情况发生</h3>
+<p><img src="assets/2019-08-25-12-25-02.png" alt=""></p>
+<p>还是上面的实操练习图，效果出来，发现会有空白折叠的情况</p>
+<p>这是因为：下图的空白区域，出现了空白折叠，有一个空格的原因<br>
+<img src="assets/2019-08-25-12-26-01.png" alt=""></p>
+<h2>扩展知识：可替换元素 非可替换元素</h2>
+<h3>非可替换元素</h3>
+<p>大部分元素，页面上显示的结果，取决于元素内容，叫<strong>非可替换元素</strong><br>
+（p元素，div元素… 里面写了什么，就显示什么）</p>
+<h3>可替换元素</h3>
+<p>少部分元素，页面上显示的结果，取决于元素的属性，成为<strong>可替换元素</strong><br>
+（img, audio, video）<br>
+比如：img元素显示的内容，取决于src属性</p>
+<pre><code class="language-html">&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
+</code></pre>
+<ul>
+<li>大部分可替换元素，都是行盒元素</li>
+<li>特殊情况，可替换元素类似于行块盒，盒模型中所有尺寸修改都有效<br>
+<img src="assets/2019-08-25-12-33-18.png" alt=""></li>
+</ul>
+<h3>图片的属性扩展： object-fit</h3>
+<ul>
+<li>contain 图片宽高比例不变</li>
+</ul>
+<p><img src="assets/2019-08-25-12-35-12.png" alt=""></p>
+<ul>
+<li>fill (默认取值)</li>
+</ul>
+<p><img src="assets/2019-08-25-12-35-33.png" alt=""></p>
+<ul>
+<li>cover (铺满，所有有些内容会丢失)</li>
+</ul>
+<p><img src="assets/2019-08-25-12-36-03.png" alt=""></p>

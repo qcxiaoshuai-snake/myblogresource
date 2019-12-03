@@ -1,0 +1,70 @@
+<hr>
+<p>title: &quot;2-6 路径&quot;<br>
+catalog: true<br>
+date: 2019-08-18<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>html</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>html</li>
+</ul>
+<hr>
+<h2>站内资源 和 站外资源</h2>
+<p>站内资源：当前网站的资源</p>
+<p>站外资源：非当前网站的资源，别人网站的资源，比方说：百度，新浪的资源</p>
+<p>资源：（图片，文件，等等）</p>
+<h2>绝对路径 和 相对路径</h2>
+<p>对站外资源：必须要用 绝对路径<br>
+对站内资源：一般使用相对路径，也可用绝对路径</p>
+<h3>绝对路径</h3>
+<pre><code class="language-html">    书写格式    
+
+    协议名://主机名:端口号/路径
+
+    schema://host:port/path
+</code></pre>
+<ul>
+<li>协议名：http, https, file</li>
+</ul>
+<pre><code class="language-html">    http://www.renren.com
+    https://www.baidu.com
+    file:///Users/yayang/Desktop/%E6%B8%A1%E4%B8%80%E4%B9%8B%E9%9D%92%E7%A8%8B%E5%B0%8F%E5%B8%85/HTML+CSS%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B/2_5%20a%E5%85%83%E7%B4%A0/index.html
+</code></pre>
+<ul>
+<li>主机名：域名, IP地址</li>
+</ul>
+<pre><code class="language-html">    http://www.renren.com
+    http://127.0.0.1:8080/
+</code></pre>
+<ul>
+<li>端口号</li>
+</ul>
+<pre><code class="language-html">    有些协议是没有端口号的，不是没有，是省略掉了
+
+    Http协议：默认端口号是 80
+    Https协议：默认端口号是 443
+</code></pre>
+<ul>
+<li>路径</li>
+</ul>
+<pre><code class="language-html">    资源的文件
+</code></pre>
+<ul>
+<li>扩展知识</li>
+</ul>
+<pre><code class="language-html">    当跳转链接 和 当前链接处于同一个协议的化 可以省略协议名
+
+    比如在http://127.0.0.1/中的某个文件 打开人人网
+
+    因为人人网也是http协议的
+
+    所以链接可以写成如下：
+
+    &lt;a href=&quot;//renren.com&quot;&gt;跳到人人网&lt;/a&gt;
+</code></pre>
+<h3>相对路径</h3>
+<p>以 ./  开头， ./ 表示当前资源所在的目录</p>
+<p>…/ 表示上一级资源所在的目录</p>

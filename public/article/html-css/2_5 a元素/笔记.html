@@ -1,0 +1,85 @@
+<hr>
+<p>title: &quot;2-5 a元素&quot;<br>
+catalog: true<br>
+date: 2019-08-18<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>html</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>html</li>
+</ul>
+<hr>
+<h2>href 属性</h2>
+<p>hyper(超级) reference(引用)</p>
+<h3>1. 表示跳转地址</h3>
+<pre><code class="language-html">    &lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;
+</code></pre>
+<h3>2. 跳转到某个锚点</h3>
+<pre><code class="language-html">    id属性：全局属性，表示元素在文档中是唯一的
+    在网页中 点击 章节7 可查看效果
+    &lt;!-- 锚点 --&gt;
+    &lt;a href=&quot;&quot;&gt;章节1&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节2&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节3&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节4&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节5&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节6&lt;/a&gt;
+    &lt;a href=&quot;#chapter7&quot;&gt;章节7&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节8&lt;/a&gt;
+    &lt;a href=&quot;&quot;&gt;章节9&lt;/a&gt;
+
+    &lt;h2&gt;章节1&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore praesentium nihil provident consequatur sit quisquam magnam dolor officiis impedit laborum cumque ipsam omnis fugiat, maiores magni. Adipisci, saepe esse!&lt;/p&gt;
+    &lt;h2&gt;章节2&lt;/h2&gt;
+    &lt;p&gt;Ea beatae ut asperiores ipsa numquam reiciendis, repellendus qui eum quam error quae ipsum cupiditate dolorem illo est quos maxime accusamus ipsam necessitatibus ducimus voluptates architecto. Quas corrupti enim pariatur.&lt;/p&gt;
+    &lt;h2&gt;章节3&lt;/h2&gt;
+    &lt;p&gt;Velit similique excepturi hic praesentium delectus officia repudiandae error nostrum at deserunt. Eveniet, vitae consectetur? Aliquid, nostrum officia maxime aut quibusdam necessitatibus deleniti earum, neque fuga unde excepturi fugit iure?&lt;/p&gt;
+    &lt;h2&gt;章节4&lt;/h2&gt;
+    &lt;p&gt;Facilis vel excepturi deleniti nam architecto rem libero eos quae sint doloremque exercitationem temporibus earum perspiciatis quam harum a, velit, saepe ut laudantium minima nostrum quasi? Consectetur repudiandae architecto tempora?&lt;/p&gt;
+    &lt;h2&gt;章节5&lt;/h2&gt;
+    &lt;p&gt;Temporibus nesciunt cupiditate eum enim at sunt vero deserunt, accusantium accusamus esse. Sit deserunt quasi quod nemo cumque quae voluptatibus praesentium? Ratione eligendi ullam ipsa accusantium nisi voluptatibus! Dolor, eaque!&lt;/p&gt;
+    &lt;h2&gt;章节6&lt;/h2&gt;
+    &lt;p&gt;Dolores reprehenderit corporis inventore commodi atque fugit sequi quia totam. Cumque, iusto illum ipsum harum eos quos beatae! Blanditiis placeat in quas incidunt, voluptatem voluptas eius a. Omnis, dicta distinctio!&lt;/p&gt;
+    &lt;h2 id=&quot;chapter7&quot;&gt;章节7&lt;/h2&gt;
+    &lt;p&gt;Voluptate, necessitatibus. Id consequuntur ipsum corporis veritatis saepe porro nemo voluptatem voluptatum nobis inventore perspiciatis rem qui error accusamus illo blanditiis reprehenderit, distinctio similique. Quia illo impedit incidunt soluta quo.&lt;/p&gt;
+    &lt;h2&gt;章节8&lt;/h2&gt;
+    &lt;p&gt;Culpa quidem enim obcaecati quae. Deserunt optio amet nam ratione consequuntur explicabo expedita! Quas minus, corrupti fugiat sint dicta quia distinctio molestiae eum cupiditate aspernatur consectetur natus modi necessitatibus maiores?&lt;/p&gt;
+    &lt;h2&gt;章节9&lt;/h2&gt;
+    &lt;p&gt;Itaque, facere? Voluptate, et ducimus. Ut sunt consequuntur temporibus illo adipisci veniam, accusantium doloribus esse modi officia quaerat culpa. Animi, nostrum nesciunt. Temporibus fugit deserunt aperiam reprehenderit maiores architecto quos?&lt;/p&gt;
+    &lt;h2&gt;章节10&lt;/h2&gt;
+    &lt;p&gt;Animi dolor dolore atque? Molestiae minus eveniet aliquam ipsum ut molestias vel, dolorem quidem. Nemo sint magnam dolores accusantium distinctio impedit ullam? Ipsam neque debitis dolorum, necessitatibus quam velit eos.&lt;/p&gt;  
+    
+    &lt;a href=&quot;#&quot;&gt;回到顶部&lt;/a&gt;  
+</code></pre>
+<h3>3. 功能性链接</h3>
+<p>点击后，触发某个功能</p>
+<ul>
+<li>点击后触发执行JS代码</li>
+</ul>
+<pre><code class="language-html">    &lt;a href=&quot;javascript: alert('你好')&quot;&gt;弹出，你好&lt;/a&gt;
+</code></pre>
+<ul>
+<li>发送邮件 mailTo</li>
+</ul>
+<pre><code class="language-html">    要求用户计算机上安装有邮件发功软件
+
+    &lt;a href=&quot;mailto:1669932644@qq.com&quot;&gt;发邮件&lt;/a&gt;
+</code></pre>
+<ul>
+<li>拨号，拨打电话 tel</li>
+</ul>
+<pre><code class="language-html">    要求用户计算机安装有拨号软件
+
+    手机端不需要拨号软件，直接放置如下代码
+
+    &lt;a href=&quot;tel:18660293796&quot;&gt;打电话&lt;/a&gt;
+</code></pre>
+<h2>target 属性</h2>
+<p>表示跳转窗口位置</p>
+<ul>
+<li>target=“_self”  当前窗口打开</li>
+<li>target=&quot;_blank&quot; 在空白窗口打开</li>
+</ul>

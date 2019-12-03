@@ -1,0 +1,53 @@
+<hr>
+<p>title: &quot;2-7 图片元素&quot;<br>
+catalog: true<br>
+date: 2019-08-18<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>html</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>html</li>
+</ul>
+<hr>
+<h2>img 元素</h2>
+<p>是一个 空元素</p>
+<pre><code class="language-html">    &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
+</code></pre>
+<h3>src  属性</h3>
+<p>source 资源<br>
+值可以放置：站内资源/站外资源</p>
+<h3>alt 属性</h3>
+<p>当图片资源失效时，将使用该属性的文字替换图片</p>
+<h3>和 a元素连用</h3>
+<pre><code class="language-html">    &lt;a href=&quot;https://baike.baidu.com/item/%E5%A4%AA%E9%98%B3%E7%B3%BB/173281?fr=aladdin&quot;&gt;
+        &lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1566123703211&amp;di=f4ed25ba420fe67eec8da864dbdf837f&amp;imgtype=0&amp;src=http%3A%2F%2Fs14.sinaimg.cn%2Fmw690%2F001KwHbngy6MzFZpfOd0d%26690&quot; alt=&quot;太阳系图片&quot;&gt;
+    &lt;/a&gt;
+</code></pre>
+<p><img src="assets/2019-08-18-15-34-33.png" alt=""></p>
+<h3>和 map元素连用</h3>
+<p>如果在如下的图片中，单独 点击木星的形状时 跳转到木星的说明 怎么做<br>
+<img src="assets/2019-08-18-15-36-29.png" alt=""></p>
+<p>map: 地图</p>
+<p>map的子元素：area</p>
+<p>area 中的坐标（coords）计算方式</p>
+<p><strong>重要：为了避免误差的存在，需要使用专业的衡量工具 PS，PXCOOK</strong></p>
+<p><img src="assets/2019-08-18-15-44-03.png" alt=""></p>
+<p>运行如下代码：</p>
+<pre><code class="language-html">    &lt;a href=&quot;https://baike.baidu.com/item/%E5%A4%AA%E9%98%B3%E7%B3%BB/173281?fr=aladdin&quot;&gt;
+        &lt;img usemap=&quot;#solarMap&quot; src=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1566123703211&amp;di=f4ed25ba420fe67eec8da864dbdf837f&amp;imgtype=0&amp;src=http%3A%2F%2Fs14.sinaimg.cn%2Fmw690%2F001KwHbngy6MzFZpfOd0d%26690&quot; alt=&quot;太阳系图片&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;map name=&quot;solarMap&quot;&gt;
+        &lt;!-- shape: 形状(圆形，矩形，多边形等) coords：坐标（以左上角为起点） --&gt;
+        &lt;area shape=&quot;circle&quot; coords=&quot;219, 187, 23&quot; href=&quot;https://baike.baidu.com/item/%E6%9C%A8%E6%98%9F/222105?fr=aladdin&quot; alt=&quot;&quot; target=&quot;_blank&quot;&gt;
+    &lt;/map&gt;
+</code></pre>
+<p>效果可看到 木星上 有个高亮效果<br>
+<img src="assets/2019-08-18-15-45-50.png" alt=""></p>
+<h3>和 figure元素连用</h3>
+<p>指代 的意思</p>
+<p>通常用于把图片，图片标题，描述有联系起来 为了便于更好的语义化</p>
+<p>这样浏览器 或者搜索引擎在解析时  就知道 那块内容的描述和图片是相关连的</p>

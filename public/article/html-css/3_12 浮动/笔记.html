@@ -1,0 +1,482 @@
+<hr>
+<p>title: &quot;3-12 浮动&quot;<br>
+catalog: true<br>
+date: 2019-09-07<br>
+subtitle: &quot;HTML和CSS零基础权威入门&quot;<br>
+header-img: &quot;Demo.png&quot;<br>
+tags:</p>
+<ul>
+<li>css</li>
+<li>html和css零基础入门<br>
+catagories:</li>
+<li>css</li>
+</ul>
+<hr>
+<h2>前言</h2>
+<p>视觉格式化模型，大体上将页面盒子的排列分为三种方式：</p>
+<ol>
+<li>常规流</li>
+<li>浮动</li>
+<li>定位</li>
+</ol>
+<h2>浮动的应用场景</h2>
+<ol>
+<li>文字环绕</li>
+</ol>
+<p><img src="assets/2019-09-07-09-23-54.png" alt=""></p>
+<ol start="2">
+<li>横向排列</li>
+</ol>
+<p><img src="assets/2019-09-07-09-24-51.png" alt=""></p>
+<h2>浮动的优势(兼容低版本浏览器)</h2>
+<p>虽然现在CSS3有很多可以横向排列的方式，比如弹性布局，网格布局，但是一些大型的网站，为了获得更好的兼容性，会使用浮动，因为浮动会兼容低版本的浏览器，IE6，IE7这些等等</p>
+<h2>浮动基本特点</h2>
+<p>修改float属性为：</p>
+<ul>
+<li>left: 左浮动，元素靠上靠左</li>
+<li>right：右浮动，元素靠上靠右</li>
+</ul>
+<p>默认值：none 不浮动（不浮动就是常规流）</p>
+<h3>特点1 当元素浮动后，它就快成了块盒</h3>
+<p>浮动里面不存在行盒，当一个元素设置了浮动，它就会变成块盒</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        span {
+            border: 3px solid;
+            float: left;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;span&gt;
+        Lorem ipsum dolor sit.
+    &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-09-32-55.png" alt=""></p>
+<h3>特点2 浮动元素的包含块，和常规流一样，为父元素的内容盒</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            width: 500px;
+            height: 500px;
+            background: lightblue;
+        }
+        .contanier div {
+            width: 150px;
+            height:150px;
+            background: red;
+        }
+        .contanier .left {
+            float: left;
+        }
+        .contanier .right {
+            float: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;Left, ipsum dolor.&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;Right, ipsum dolor.&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-09-42-12.png" alt=""></p>
+<h2>浮动盒子的尺寸</h2>
+<h3>浮动元素宽度为auto时，它的宽度由内容决定</h3>
+<p>比如，下面的类选择器left,right的两个子元素，<br>
+一个由内容，一个没有内容，我们把它们的宽度值去掉，代码如下</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            width: 500px;
+            height: 500px;
+            background: lightblue;
+        }
+        .contanier div {
+            /* 去掉子元素的宽度值，width不设置默认为auto */
+            /* width: 150px; */
+            height:150px;
+            background: red;
+        }
+        .contanier .left {
+            float: left;
+        }
+        .contanier .right {
+            float: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 子元素设置浮动效果，但是width设置为auto --&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;!-- left 无内容 --&gt;
+        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;!-- right 有内容，为：Right, ipsum dolor. --&gt;
+        &lt;div class=&quot;right&quot;&gt;Right, ipsum dolor.&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-09-50-50.png" alt=""></p>
+<h3>浮动元素高度为auto时，它的高度与常规流一样，适应内容的高度</h3>
+<p>上面的例子，把高度取消测试下即可</p>
+<h3>浮动元素，margin为auto时，为0</h3>
+<p>与常规流不一样，常规流是会吸收剩余空间</p>
+<p>浮动设置了margin，无论从什么方向，设置为auto，都为0</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            width: 500px;
+            height: 500px;
+            background: lightblue;
+        }
+        .contanier div {
+            background: red;
+            /* 设置为auto，页面无变化 */
+            margin: auto;
+        }
+        .contanier .left {
+            float: left;
+        }
+        .contanier .right {
+            float: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;Left, ipsum &lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;Right, ipsum dolor.&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-09-59-40.png" alt=""></p>
+<p>当然设置margin不是auto的情况，是生效的</p>
+<pre><code class="language-css">.contanier div {
+    background: red;
+    /* 设置为8px, 是生效的 */
+    margin: 8px;
+}
+</code></pre>
+<p><img src="assets/2019-09-07-10-01-06.png" alt=""></p>
+<h3>边框，内边距，百分比设置，与常规流一样</h3>
+<p>常规流的宽度百分比设置，看的是所在包含块的宽度的百分比<br>
+常规流的高度百分比设置，要看父元素的高度是不是受子元素的影响，如果受影响，则设置高度是无效的，如果不受影响则为内容的高度</p>
+<h2>盒子的排列（位置）</h2>
+<h3>总体规则（基本排列）</h3>
+<p>左浮动的盒子，靠上靠左排列，<br>
+右浮动的盒子，靠上靠右排列</p>
+<p>如下图，设置的是左浮动，一个挨着一个靠上靠左排列</p>
+<p><img src="assets/2019-09-07-10-15-07.png" alt=""></p>
+<p>右浮动</p>
+<p><img src="assets/2019-09-07-10-16-00.png" alt=""></p>
+<h3>规则1 浮动元素的盒子，在包含块内，如果前面右常规流的盒子，会避开常规流盒子</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            width: 800px;
+            height: 500px;
+            background: lightblue;
+        }
+        .contanier .item {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            border: 2px solid;
+        }
+        .contanier .normal {
+            height: 30px;
+            background: #008c8c;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;normal&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;11&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-12-48-18.png" alt=""></p>
+<h3>规则2 浮动元素的盒子，在包含块内容，如果后面有常规流的盒子，常规流盒子会无视浮动元素</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            width: 800px;
+            height: 500px;
+            background: lightblue;
+        }
+        .contanier .item {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            border: 2px solid;
+        }
+        .contanier .normal {
+            height: 30px;
+            background: #008c8c;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;11&lt;/div&gt;
+        &lt;div class=&quot;normal&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-12-50-56.png" alt=""></p>
+<p><strong>常规流盒子和浮动元素混排的话，情况很多种，这里只是简单的介绍基本的一些区别</strong></p>
+<h3>行盒在排列时，会避开浮动元素</h3>
+<p><strong>如果文字没有在行盒中，浏览器会自动生产一个行盒包裹文字</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier img {
+            float: left;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;img src=&quot;https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3868620627,2694438302&amp;fm=58&quot; alt=&quot;&quot; style=&quot;width: 100px&quot;&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo suscipit distinctio vero nesciunt reprehenderit? Laboriosam in a dolore corporis sapiente? Omnis dolorum tempora expedita doloremque veritatis harum similique blanditiis distinctio quaerat tenetur dolor delectus nemo, sit fugiat consequuntur ipsa minima quidem labore laborum praesentium magnam vero. Dolores, eligendi id incidunt consectetur odio animi! Deserunt mollitia eligendi inventore adipisci nulla corrupti a cum, porro esse excepturi, ullam modi laudantium unde magni. Nisi eaque velit, iure ex laudantium sequi doloremque eius libero?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-13-21-16.png" alt=""></p>
+<h2>浮动的常见问题：高度塌陷</h2>
+<p>原因：常规流的盒子的自动高度，在计算时，不会考虑浮动的元素，只考虑常规流盒子下的盒模型</p>
+<p>例如：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            padding: 30px;
+            background: lightblue;
+        }
+        .contanier .item {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            border: 2px solid;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;11&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-13-36-12.png" alt=""></p>
+<h3>解决高度坍塌方法一：clear属性</h3>
+<p>clear：清除浮动</p>
+<ul>
+<li>默认值： none</li>
+<li>left： 清除左浮动，该元素必须出现在前面所有左浮动盒子的下方</li>
+<li>right： 清除右浮动，该元素必须出现在前面所有右浮动盒子的下方</li>
+<li>both： 清除左右浮动，该元素必须出现在前面所有浮动盒子的下方</li>
+</ul>
+<p>在浮动元素后追加一个元素，设置clear属性</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            padding: 30px;
+            background: lightblue;
+        }
+        .contanier .item {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            border: 2px solid;
+        }
+        .contanier .clearfix {
+            /* 设置清除浮动 */
+            clear: both;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;11&lt;/div&gt;
+        &lt;!-- 追加一个元素 设置清除浮动 --&gt;
+        &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-13-42-49.png" alt=""></p>
+<h3>解决高度坍塌方法二： 伪元素 ::after</h3>
+<p>方法一的弊端，在于无缘无故的追加了一个没什么用的元素</p>
+<p>运用伪元素</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .contanier {
+            padding: 30px;
+            background: lightblue;
+        }
+        .contanier .item {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            border: 2px solid;
+        }
+        /* 运用伪元素，在微末增加伪元素 */
+        .clearfix::after {
+            /* 内容为空 */
+            content: '';
+            /* 设置为块盒 */
+            display: block;
+            /* 清除浮动 */
+            clear: both;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contanier clearfix&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;11&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="assets/2019-09-07-13-47-06.png" alt=""></p>
